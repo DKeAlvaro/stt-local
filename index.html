@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voz a texto local en el móvil · 2026</title>
+<meta name="description" content="Panorama de modelos de speech-to-text que caben en un teléfono normal: tamaños, idiomas, calidad y velocidad. Octubre 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Ibarra+Real+Nova:wght@400;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#e7dfcc; --ink:#221c14; --accent:#9b2114; --muted:#6b5f4b; --rule:#c8bda3; --card:#efe8d7;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+       font-family:"Newsreader",Georgia,serif;font-size:19px;line-height:1.62}
+  .wrap{max-width:820px;margin:0 auto;padding:28px 22px 90px}
+  header.mast{border-bottom:3px double var(--ink);padding-bottom:18px;margin-bottom:26px}
+  .kicker{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.16em;
+          text-transform:uppercase;color:var(--accent);font-weight:600}
+  h1{font-family:"Ibarra Real Nova",serif;font-size:clamp(34px,6vw,58px);line-height:1.02;
+     margin:.18em 0 .1em;font-weight:700}
+  .dek{font-size:21px;color:var(--muted);font-style:italic;max-width:62ch}
+  .byline{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);
+          letter-spacing:.06em;margin-top:14px}
+  h2{font-family:"Ibarra Real Nova",serif;font-size:30px;margin:2.1em 0 .5em;font-weight:700}
+  h2 .n{color:var(--accent);font-family:"IBM Plex Mono",monospace;font-size:16px;
+        vertical-align:.35em;margin-right:.5em}
+  p{margin:.85em 0}
+  a{color:var(--accent)}
+  .bignums{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+           gap:14px;margin:30px 0 8px}
+  .bn{background:var(--card);border:1px solid var(--rule);padding:16px 16px 13px}
+  .bn b{display:block;font-family:"Ibarra Real Nova",serif;font-size:40px;line-height:1;
+        color:var(--accent);font-weight:700}
+  .bn span{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.07em;
+           text-transform:uppercase;color:var(--muted);display:block;margin-top:8px}
+  table{width:100%;border-collapse:collapse;margin:22px 0 8px;font-size:15.5px}
+  th{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.09em;
+     text-transform:uppercase;text-align:left;border-bottom:2px solid var(--ink);
+     padding:8px 9px;color:var(--muted)}
+  td{border-bottom:1px solid var(--rule);padding:9px;vertical-align:top}
+  tr td:first-child{font-weight:600;white-space:nowrap}
+  .num{font-family:"IBM Plex Mono",monospace;font-size:14px}
+  .small{font-size:14.5px;color:var(--muted)}
+  .pull{border-left:3px solid var(--accent);padding:2px 0 2px 18px;margin:26px 0;
+        font-size:22px;font-style:italic;line-height:1.45}
+  .note{background:var(--card);border:1px solid var(--rule);padding:15px 18px;margin:22px 0;
+        font-size:16.5px}
+  .note b{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.09em;
+          text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px}
+  ol,ul{padding-left:1.25em}
+  li{margin:.42em 0}
+  code{font-family:"IBM Plex Mono",monospace;font-size:.86em;background:#ded4bd;padding:1px 5px}
+  footer{border-top:3px double var(--ink);margin-top:56px;padding-top:18px;font-size:14.5px}
+  footer h3{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;
+            text-transform:uppercase;color:var(--muted);margin:0 0 10px;font-weight:600}
+  footer ol{font-family:"IBM Plex Mono",monospace;font-size:12.5px;line-height:1.75}
+  footer a{word-break:break-all}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="mast">
+  <div class="kicker">Investigación · audio · dispositivos</div>
+  <h1>Voz a texto<br>sin nube</h1>
+  <div class="dek">Modelos de speech-to-text que caben en un teléfono normal y van
+  más rápido que el tiempo real. Qué hay en octubre de 2026, cuánto pesan y qué se pierde
+  al dejar de subir el audio a un servidor.</div>
+  <div class="byline">Álvaro Menéndez · 6 oct 2026 · panorama comparado + fuentes</div>
+</header>
+
+<p>La premisa es sencilla: si el audio se transcribe en el propio teléfono, no hay
+subida, no hay cuenta atrás dependiente de la red y no hay una API que pagar. El precio
+es que los modelos pequeños reconocen peor que el <em>cloud</em>. La pregunta útil no es
+«¿se puede?» —se puede, y ya hay apps que lo hacen— sino <strong>cuántos megas y cuánta
+calidad estás dispuesto a cambiar</strong>.</p>
+
+<div class="bignums">
+  <div class="bn"><b>16,9 MB</b><span>Whistle · 7 idiomas</span></div>
+  <div class="bn"><b>31 MB</b><span>whisper tiny quantizado · 99 idiomas</span></div>
+  <div class="bn"><b>42 MB</b><span>Moonshine v2 tiny · streaming, MIT</span></div>
+  <div class="bn"><b>11 ms</b><span>al primer token (Whistle, clip de 10 s)</span></div>
+</div>
+
+<h2><span class="n">01</span>La camada nueva: modelos nacidos para el borde</h2>
+
+<p>Hasta hace poco, «modelo pequeño» significaba Whisper <em>tiny</em> recortado. Desde
+2025-2026 hay modelos entrenados desde cero para CPU de móvil, con arquitecturas que
+Whisper no usa (atención de ventana deslizante, pesos comprimidos de fábrica).</p>
+
+<p><strong>Whistle</strong> (Cactus Compute, 2 de octubre de 2026) es el caso extremo:
+un único fichero de <strong>16,9 MB</strong>, sin dependencias, que transcribe hasta 30 s
+en inglés, alemán, francés, español, italiano, neerlandés y polaco. Detecta el idioma,
+devuelve <em>timestamps</em> por palabra y —lo más interesante para un producto de dictado—
+acepta <strong>sesgo de palabras clave</strong> (un autómata Aho-Corasick que sube la
+probabilidad de nombres propios o tecnicismos durante la búsqueda). Primer token en 11 ms,
+1.319 tokens/s de decodificación. Su gráfico lo enfrenta a Whisper <em>base</em>
+(145,3 MB) y Moonshine tiny v2 (41,9 MB): Whistle gana en LibriSpeech, SPGISpeech,
+Earnings-22 y la media de FLEURS; pierde en TED-LIUM, AMI y la media de MLS. En una prueba
+propia con 240 clips de MINDS14 (acentos de varios países): WER 33,3 % frente al 32,2 % de
+Whisper <em>base</em> —empate técnico— con un RTF de 0,03 en un móvil de gama media.
+Traducido: 10 s de audio se transcriben en ~0,3 s de CPU.</p>
+
+<p><strong>Moonshine v2 Streaming</strong> (Useful Sensors) ataca otro frente: el
+<em>streaming</em> real. Encoder con atención de ventana deslizante y 80 ms de
+<em>lookahead</em>, de modo que el texto sale mientras hablas. Tiny = 34 M de parámetros
+(~42 MB), small = 123 M, medium = 245 M. Lo notable son sus números por idioma: español
+tiny <strong>6,2 %</strong> WER y small <strong>4,9 %</strong>; inglés tiny 12,0 % / small
+7,84 % (media de 8 datasets del Open ASR Leaderboard); alemán 12,0 / 7,5. Licencia MIT.
+La letra pequeña: son <strong>modelos separados por idioma</strong> (inglés, español,
+alemán, árabe, japonés, mandarín, tagalo y vietnamita) y <strong>no hay francés, italiano,
+portugués ni neerlandés</strong>. Sin mezcla de idiomas dentro de una frase.</p>
+
+<div class="pull">El modelo de 16,9 MB y el de 42 MB ya existen. La discusión real es
+cuántos idiomas necesitas y si tus usuarios mezclan lenguas en la misma frase.</div>
+
+<h2><span class="n">02</span>El clásico: Whisper cuantizado</h2>
+
+<p>Whisper sigue siendo el único modelo <strong>multilingüe de verdad</strong> en este
+rango de peso: 99 idiomas en un solo fichero, con detección de idioma y cierta tolerancia
+a cambiar de idioma a mitad de frase. Con <code>whisper.cpp</code> (C/C++, ejemplo oficial
+de Android, bindings Java/React Native, VAD incluido) y cuantización q5, los tamaños son:</p>
+
+<table>
+  <tr><th>Modelo ggml</th><th>Disco</th><th>Notas</th></tr>
+  <tr><td>tiny / tiny.en</td><td class="num">75 MiB</td><td>99 idiomas / solo inglés, algo mejor en EN</td></tr>
+  <tr><td>tiny q5_1</td><td class="num">31 MB</td><td>el multilingüe más pequeño que vale la pena</td></tr>
+  <tr><td>base / base.en</td><td class="num">142 MiB</td><td>~58 MB cuantizado; salto de calidad notable</td></tr>
+  <tr><td>small</td><td class="num">466 MiB</td><td>fuera de presupuesto móvil razonable</td></tr>
+  <tr><td>large-v3-turbo</td><td class="num">1,5 GiB</td><td>lo que corre hoy en la nube (q5: 547 MiB)</td></tr>
+</table>
+
+<p class="small">Los tamaños de <em>tiny/base/small</em> en fp16 son los del repositorio
+<code>ggml</code>; las variantes q5 cuantizan pesos y activaciones a 5 bits. Como referencia
+de velocidad en móvil: la versión int8 de Whisper tiny exportada por Arm a ExecuTorch
+(XNNPACK + KleidiAI) corre a <strong>6× tiempo real</strong> en un vivo X300, con 116 MB de
+peso y WER 7,57 % en LibriSpeech test-clean — misma calidad del tiny original.</p>
+
+<h2><span class="n">03</span>Lo demás del panorama</h2>
+
+<ul>
+  <li><strong>Audio8-ASR-0.1B</strong> (AutoArk) — «el modelo ASR utilizable más pequeño
+  de la era LLM»: 0,32 B de parámetros, 7 idiomas (ZH/EN/FR/DE/JA/KO/YUE), WER medio 7,03
+  en el Open ASR Leaderboard, con <em>hotwords</em> por logit. Pero pesa cientos de MB
+  (1,1 GB de pico en ONNX Runtime) → material para el futuro, no para 50 MB.</li>
+  <li><strong>LiteASR / lite-whisper</strong> — comprime el decoder de Whisper con
+  aproximación de bajo rango: <em>lite-whisper-small</em> es <em>más</em> exacto que
+  whisper-small (WER 14,96 vs 15,89) con el encoder un 20 % más pequeño. Útil si el
+  presupuesto sube de 50 a ~200 MB.</li>
+  <li><strong>Vosk</strong> — el veterano: modelos de 36–49 MB por idioma, streaming y
+  vocabulario dinámico, Apache-2.0, pero con WER del 23–38 % fuera del inglés y tecnología
+  Kaldi clásica. Solo como fallback de emergencia.</li>
+  <li><strong>SenseVoice-Small</strong> (448 MB, ZH/YUE/EN/JA/KO) y <strong>MMS</strong>
+  (Meta, 1.000+ idiomas pero >1 GB): multilingües pero muy por encima del peso admitido.</li>
+  <li><strong>El propio Android</strong> — Android 16 introduce <code>OnDeviceAsrEngine</code>:
+  un modelo de ~50 MB en la partición del sistema, 8 idiomas, cero descarga, llamable con
+  <code>createOnDeviceSpeechRecognizer</code>. En Android 15 y anteriores esa llamada
+  devuelve <code>ERROR_NETWORK</code> sin conexión. Es gratis y no ocupa, pero la calidad
+  depende del fabricante y no controlas nada más.</li>
+  <li><strong>Comercial</strong> — Picovoice Cheetah/Leopard (streaming on-device, licencia
+  enterprise por dispositivo) y similares: sólidos, pero imponen un coste por usuario que
+  anula el argumento de «sin API que pagar».</li>
+</ul>
+
+<h2><span class="n">04</span>Cómo elegirlo</h2>
+
+<ol>
+  <li><strong>Idiomas y mezcla de idiomas.</strong> Si tu producto soporta 12 idiomas y
+  los usuarios cambian de lengua a mitad de frase, solo Whisper cubre eso con un fichero.
+  Whistle cubre 7 idiomas con autodetección; Moonshine exige un modelo por idioma y no
+  mezcla.</li>
+  <li><strong>Tamaño vs calidad.</strong> 16,9 MB (Whistle) ≈ calidad «Whisper base»;
+  31 MB (whisper tiny q5) ≈ Whisper tiny; 42 MB (Moonshine tiny streaming) es el mejor
+  por mega en ES/EN/DE según sus propias evaluaciones. Los WER de papers distintos
+  <em>no son comparables entre sí</em>: cada uno usa su dataset.</li>
+  <li><strong>UX.</strong> El streaming (Moonshine) hace que el texto aparezca mientras
+  hablas; los modelos por clip (Whistle, whisper) responden igual de rápido al soltar el
+  botón. Para un dictado corto de 5–15 s la diferencia es mínima.</li>
+  <li><strong>Palabras del usuario.</strong> El sesgo de palabras clave (Whistle, Audio8,
+  Vosk) es la forma barata de acertar nombres propios, marcas y tecnicismos sin reentrenar.
+  Es, además, exactamente lo que un diccionario de «palabras tuyas» necesita.</li>
+  <li><strong>Licencias.</strong> MIT (Moonshine v2 streaming, todos los tamaños e idiomas),
+  Apache-2.0 (whisper.cpp, Vosk). La licencia de Whistle no está declarada en su model
+  card: hay que confirmarla antes de meterlo en un producto comercial.</li>
+  <li><strong>Mide sobre tus propios dictados.</strong> El WER promedio no predice cuántas
+  frases quedan «listas para enviar»: lo que importa son las correcciones («no, olvida eso»),
+  los cortes a mitad de palabra y el código cambiante. El criterio de decisión debería ser
+  el porcentaje de transcripciones usables sin tocar, medido con un juez LLM sobre un set
+  de dictados reales duros.</li>
+</ol>
+
+<div class="note"><b>Recomendación</b>
+Para una app de dictado multiidioma con usuarios que mezclan español e inglés:
+<strong>whisper tiny cuantizado (31 MB)</strong> como base — es el único que cubre todos los
+idiomas y la mezcla en un fichero, con un runtime probado en Android —, y
+<strong>Whistle (16,9 MB)</strong> como primera opción si el presupuesto de descarga manda
+y 7 idiomas bastan. Dos híbridos que ganan siempre: (1) insertar el texto local al instante
+y refinarlo en el servidor cuando llegue, así la espera desaparece; (2) mantener la ruta de
+nube como fallback para idiomas no cubiertos o audio ruidoso. El modelo debe descargarse
+bajo demanda, no viajar dentro del APK.</div>
+
+<footer>
+  <h3>Fuentes</h3>
+  <ol>
+    <li>Cactus Compute — <em>Whistle: Speech to Text in 16.9 MB</em> (2 oct 2026) · <a href="https://cactuscompute.com/blog/whistle">cactuscompute.com/blog/whistle</a> · pesos: <a href="https://huggingface.co/Cactus-Compute/whistle">HF Cactus-Compute/whistle</a></li>
+    <li>Useful Sensors — <em>Moonshine v2: Ergodic Streaming Encoder ASR</em> · <a href="https://arxiv.org/abs/2602.12241">arXiv:2602.12241</a> · tarjetas: <a href="https://huggingface.co/UsefulSensors/moonshine-streaming-tiny">moonshine-streaming-tiny</a></li>
+    <li>Moonshine docs — tabla de modelos por idioma, WER y licencias · <a href="https://moonshine-voice.readthedocs.io/en/stable/models/available-models/">moonshine-voice.readthedocs.io</a></li>
+    <li>ggml-org — whisper.cpp + tabla de ficheros ggml · <a href="https://github.com/ggml-org/whisper.cpp">github.com/ggml-org/whisper.cpp</a></li>
+    <li>Arm — <em>whisper-tiny int8 (ExecuTorch/XNNPACK)</em>, RTFx y WER en vivo X300 · <a href="https://huggingface.co/Arm/whisper-tiny-int8-xnnpack-executorch">HF Arm/whisper-tiny-int8</a></li>
+    <li>Alphacep — modelos Vosk (tamaños y WER) · <a href="https://alphacephei.com/vosk/models">alphacephei.com/vosk/models</a></li>
+    <li>AutoArk — Audio8-ASR-0.1B · <a href="https://huggingface.co/Edge0/Audio8-ASR-0.1B">HF Edge0/Audio8-ASR-0.1B</a></li>
+    <li>LiteASR (efeslab) · <a href="https://huggingface.co/efficient-speech/lite-whisper-tiny">HF efficient-speech/lite-whisper-tiny</a></li>
+    <li>Kevin — <em>Android On-device Speech Recognition: From SpeechRecognizer to Android 16 ASR</em> · <a href="https://xckevin.com/en/blog/android-on-device-speech-recognition/">xckevin.com</a></li>
+  </ol>
+</footer>
+
+</div>
+</body>
+</html>
